@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmoPedia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cosmic-background"></div>
+    <div class="stars"></div>
+    <div class="floating-particles" id="particles"></div>
+
+    <div class="container">
+        <header>
+            <h1>CosmoPedia</h1>
+            <p>Explore the cosmic wonders of our universe</p>
+        </header>
+
+        <div class="date-picker-container">
+            <div class="date-picker">
+                <input type="text" class="date-input" id="dateInput" placeholder="Select a date..." readonly>
+                <div class="calendar" id="calendar">
+                    <div class="calendar-header">
+                        <button class="nav-btn" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                        <h3 id="monthYear">June 2023</h3>
+                        <button class="nav-btn" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="days" id="days"></div>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <div class="apod-container">
+                <div id="apodContent">
+                    <div class="loading">
+                        <div class="loading-spinner"></div>
+                        <div class="loading-text">Exploring the cosmos...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p class="copyright">&copy; 2025 CosmoPedia by Pallavi Thakur. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
