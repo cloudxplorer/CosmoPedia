@@ -1,50 +1,47 @@
 # CosmoPedia
-CosmoPedia is an interactive web application that lets users explore the universe through NASA's Astronomy Picture of the Day (APOD) API. Users can view stunning images and videos from space, along with detailed explanations of celestial phenomena, all within a visually immersive cosmic interface.
+A visually stunning web application that allows users to explore NASA's Astronomy Picture of the Day (APOD) for any date, featuring cosmic backgrounds, interactive calendar, and immersive animations.
 
 ## Description
-CosmoPedia brings the beauty of the universe to your screen. With a captivating cosmic-themed interface featuring blinking stars, smooth animations, and responsive design, users can explore NASA's daily space media. The application automatically fetches the Astronomy Picture of the Day and displays either images or videos, along with descriptions, titles, and dates. Users can refresh the content anytime to discover new cosmic wonders.
-
-This project is perfect for space enthusiasts, students, and anyone fascinated by the mysteries of the universe.
+This project is a front-end web application that fetches the Astronomy Picture of the Day from NASA's APOD API and displays it in an interactive, visually engaging interface. Users can select any date to view the respective astronomical media, which may be an image or a video, accompanied by a detailed explanation. The app is designed with a cosmic theme including animated stars, floating particles, and glassmorphic UI elements for a modern, immersive experience.
 
 ## Features
-- **NASA APOD Integration**: Fetches daily images or videos from NASA's Astronomy Picture of the Day API.
-- **Cosmic UI**: Dynamic starfield background with blinking stars and gradient overlays for a visually stunning experience.
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices.
-- **Loading & Error Handling**: Animated loading spinner while fetching data and graceful error messages if fetching fails.
-- **Refresh Button**: Allows users to fetch a new APOD instantly.
-- **Media Support**: Supports both images and videos.
-- **Smooth Animations**: Hover effects, animated borders, and gradient text enhance the user experience.
-- **Accessible & Interactive**: Easy-to-read explanations and interactive UI elements for a modern web experience.
+- Fetch and display NASA’s Astronomy Picture of the Day (image or video) with title, date, and description.
+- Interactive calendar for selecting any date starting from June 16, 1995 (APOD launch date) to today.
+- Highlights available and unavailable dates dynamically.
+- Stunning cosmic background with animated stars and floating particles.
+- Responsive design for desktops, tablets, and mobile devices.
+- Glassmorphic APOD card with hover animations.
+- Loading spinner with animated text during data fetch.
+- Error handling with retry option if API request fails.
+- Date formatting for both input field and displayed APOD date.
+- Navigation for browsing previous and next months in the calendar.
+- Smooth UI transitions and animations.
 
 ## How It Works
-1. On page load, the application initializes a blinking starfield and fetches the latest Astronomy Picture of the Day from NASA's API.
-2. The fetched media (image or video) along with its title, date, and explanation is displayed in the main content area.
-3. Users can click the "Refresh Cosmos" button to fetch a new APOD.
-4. If an error occurs (e.g., network or API issues), a user-friendly error message appears with a retry button.
-5. The application is fully responsive and adapts the starfield and media layout based on screen size.
+1. The app initializes by creating floating particles and setting up the interactive calendar.
+2. The current date is selected by default and displayed in the input field.
+3. When a date is selected:
+   - The app checks whether data is available for that date via NASA’s APOD API.
+   - If available, the app fetches the media (image/video) and description.
+   - The APOD card updates dynamically with the fetched content.
+4. Users can navigate months and select different dates via the calendar.
+5. The app handles errors gracefully and allows retrying failed API requests.
 
-## Functions & Features in Code
-
-### createBlinkingStars()
-- Dynamically generates stars in the background.
-- Adjusts the number of stars based on screen width.
-- Applies random position, size, animation delay, and duration for a realistic effect.
-
-### fetchAPOD()
-- Fetches Astronomy Picture of the Day from NASA API using fetch().
-- Displays media (image or video), title, date, and explanation.
-- Handles API errors gracefully and provides a retry mechanism.
-
-### Event Listeners
-- **Refresh Button**: Updates APOD content.
-- **Window Resize**: Regenerates starfield on screen size change.
+## Functions and Their Purpose
+- createParticles() – Generates animated floating particles in the background for visual effect.
+- formatDate(date) – Converts a Date object into YYYY-MM-DD string format for API requests.
+- formatDisplayDate(date) – Converts a Date object into a human-readable format (e.g., "October 3, 2025").
+- checkDateAvailability(dateStr) – Checks if APOD data exists for a given date and caches the result.
+- renderCalendar(date) – Renders the calendar for a given month with availability indicators.
+- initCalendar() – Initializes the calendar, navigation buttons, and input interactions.
+- fetchAPOD(date) – Fetches APOD data from NASA’s API and updates the UI.
 
 ## Installation & Usage
 1. Clone or download the repository.
-2. Open index.html in a web browser.
-3. Click Refresh Cosmos to fetch the latest Astronomy Picture of the Day.
-4. Explore the explanations and media in the main container.
-5. Resize the browser window to see dynamic starfield adjustments.
+2. Open the index.html file in a modern web browser.
+3. Use the date picker to select a date.
+4. View the astronomy image or video along with its description.
+5. If an error occurs (e.g., API failure), click "Retry Cosmic Journey" to attempt again.
 
 OR 
 
